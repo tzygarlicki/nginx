@@ -1,0 +1,17 @@
+# This file is managed by Puppet
+# Any manual change will be overwritten
+
+server {
+    listen <%= scope['nginx::proxy_ListenPort'] %>;
+    
+    allow <%= scope['nginx::proxy_Allow'] %>;
+    allow 127.0.0.1;
+    deny  all;
+
+    location / {
+        resolver   <%= scope['nginx::proxy_Resolver'] %>;
+	proxy_pass http://$http_host$uri$is_args$args;
+        access_log <%= scope['nginx::proxy_AccessLog'] %> timing;
+    }
+}
+
