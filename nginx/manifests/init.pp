@@ -6,7 +6,7 @@ class nginx (
   String  $proxy_TestWeb       = 'web01.tzygarlicki.com',
   String  $proxy_TestString    = '20200910 Welcome to HTTP page.',
   String  $reverse_Domain      = 'domain.com',
-  Integer $reverse_ListenPort  = 80,
+  Integer $reverse_ListenPort  = 443,
   Hash    $reverse_Locations   = { 
     '/resources' => '20.20.20.20/',
     '/'          => '10.10.10.10'
